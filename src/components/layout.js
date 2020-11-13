@@ -1,6 +1,13 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles'; 
-import { AppBar, Button, Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Typography, Container, Link, CircularProgress } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import {
+  AppBar,
+  CssBaseline,
+  Toolbar,
+  Typography,
+  Container,
+  CircularProgress,
+} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -40,47 +47,57 @@ export default function Layout({ title, desc, children, maxWidth, loading }) {
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar position="relative">
+      <AppBar position='relative'>
         <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
+          <Typography variant='h6' color='inherit' noWrap>
             Rick & Morty
           </Typography>
         </Toolbar>
       </AppBar>
       <main>
         <div className={classes.heroContent}>
-          {loading && (
-            <CircularProgress />
-          )}
+          {loading && <CircularProgress />}
           {!loading && (
-            <Container maxWidth="sm">
-              <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+            <Container maxWidth='sm'>
+              <Typography
+                component='h1'
+                variant='h2'
+                align='center'
+                color='textPrimary'
+                gutterBottom
+              >
                 {title}
               </Typography>
-              <Typography variant="h5" align="center" color="textSecondary" paragraph>
+              <Typography
+                variant='h5'
+                align='center'
+                color='textSecondary'
+                paragraph
+              >
                 {desc}
               </Typography>
             </Container>
           )}
         </div>
         <Container className={classes.content} maxWidth={maxWidth}>
-          {loading ? (
-            <CircularProgress />
-          ) : children}
+          {loading ? <CircularProgress /> : children}
         </Container>
       </main>
       <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
+        <Typography variant='h6' align='center' gutterBottom>
           Rick & Morty
         </Typography>
-        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
+        <Typography
+          variant='subtitle1'
+          align='center'
+          color='textSecondary'
+          component='p'
+        >
           Front-End Developed By: Habib Khademhosseini
         </Typography>
-        <Typography variant="body2" color="textSecondary" align="center">
+        <Typography variant='body2' color='textSecondary' align='center'>
           {'Copyright © '}
-          Rick & Morty
-          {' '}
-          {new Date().getFullYear()}
+          Rick & Morty {new Date().getFullYear()}
           {'.'}
         </Typography>
       </footer>
@@ -88,7 +105,6 @@ export default function Layout({ title, desc, children, maxWidth, loading }) {
   );
 }
 
-
 Layout.defaultProps = {
-  maxWidth: 'lg'
-}
+  maxWidth: 'lg',
+};

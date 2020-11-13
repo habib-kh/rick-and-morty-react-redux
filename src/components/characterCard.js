@@ -6,12 +6,11 @@ import {
   Typography,
   Button,
 } from '@material-ui/core';
-import { useTheme, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 
 export default function CharacterCard({ character }) {
   const classes = useStyles();
-  const theme = useTheme();
 
   return (
     <Card className={classes.root} elevation={2}>

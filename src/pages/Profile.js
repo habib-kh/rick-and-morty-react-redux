@@ -1,4 +1,3 @@
-import { Container, Grid } from '@material-ui/core';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import _ from 'underscore';
@@ -9,7 +8,6 @@ import {
   getProfile,
 } from '../store/actions';
 import { Layout, CharachterProfile } from '../components';
-
 
 export default function Profile({
   match: {
