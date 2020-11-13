@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Home from './components/Home';
-import Profile from './components/Profile';
+import Home from './pages/Home';
+import Profile from './pages/Profile';
 import { Provider } from 'react-redux';
-import store from './redux/store';
+import store from './store/store';
 function App() {
   return (
     <Provider store={store}>
