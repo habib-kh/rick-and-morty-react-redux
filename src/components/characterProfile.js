@@ -1,7 +1,12 @@
-import React, { useEffect } from 'react';
-import { Container, Grid } from '@material-ui/core';
+import React from 'react';
+import { Grid } from '@material-ui/core';
 
-export default function CharachterProfile({ profile, episodes, location, origin }) {
+export default function CharachterProfile({
+  profile,
+  episodes,
+  location,
+  origin,
+}) {
   return (
     <Grid
       container
@@ -10,14 +15,7 @@ export default function CharachterProfile({ profile, episodes, location, origin 
       justify='center'
       alignItems='flex-start'
     >
-      <Grid
-        item
-        container
-        alignItems='center'
-        justify='center'
-        sm={12}
-        md={6}
-      >
+      <Grid item container alignItems='center' justify='center' sm={12} md={6}>
         <img alt={profile?.name} src={profile?.image}></img>
       </Grid>
       <Grid item sm={12} md={6}>
