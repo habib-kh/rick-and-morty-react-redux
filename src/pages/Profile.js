@@ -1,4 +1,4 @@
-import { Container, Grid, makeStyles } from '@material-ui/core';
+import { Container, Grid } from '@material-ui/core';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -8,15 +8,6 @@ import {
   getProfile,
 } from '../store/actions';
 import _ from 'underscore';
-
-const useStyle = makeStyles({
-  red: {
-    background: 'red',
-  },
-  green: {
-    background: 'green',
-  },
-});
 
 export default function Profile({
   match: {

@@ -1,13 +1,5 @@
-import React, { useState } from 'react';
-import {
-  Card,
-  CardContent,
-  CardMedia,
-  Container,
-  Grid,
-  makeStyles,
-  Typography,
-} from '@material-ui/core';
+import React from 'react';
+
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCharacters } from '../store/actions';
