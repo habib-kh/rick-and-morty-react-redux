@@ -17,8 +17,8 @@ export default function Home({ match }) {
   return (
     <Layout
       loading={loading}
-      title='The Rick and Morty'
-      desc='In this site we show you more information about Rick & Morty'
+      title="The Rick and Morty"
+      desc="In this site we show you more information about Rick & Morty"
     >
       <CharacterList characters={characters} />
     </Layout>

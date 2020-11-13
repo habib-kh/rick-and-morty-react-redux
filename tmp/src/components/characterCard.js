@@ -3,8 +3,10 @@ import {
   Card,
   CardContent,
   CardMedia,
+  Grid,
   Typography,
-  Button,
+  CardActions,
+  Button
 } from '@material-ui/core';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
@@ -15,21 +17,21 @@ export default function CharacterCard({ character }) {
 
   return (
     <Card className={classes.root} elevation={2}>
-      <CardContent className={classes.details}>
-        <Typography component='h6' variant='h6'>
-          {character.name}
-        </Typography>
-        <Typography
-          variant='caption'
-          color='textSecondary'
-          className={classes.location}
-        >
-          {character.location.name}
-        </Typography>
-        <Button size='small' component={Link} to={`/profile/${character.id}`}>
-          Learn More
-        </Button>
-      </CardContent>
+        <CardContent className={classes.details}>
+          <Typography component="h6" variant="h6">
+            {character.name}
+          </Typography>
+          <Typography variant="caption" color="textSecondary" className={classes.location}>
+            {character.location.name}
+          </Typography>
+            <Button
+              size="small"
+              component={Link}
+              to={`/profile/${character.id}`}
+            >
+              Learn More
+            </Button>
+        </CardContent>
       <CardMedia
         className={classes.cover}
         image={character.image}
@@ -38,6 +40,7 @@ export default function CharacterCard({ character }) {
     </Card>
   );
 }
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -58,3 +61,4 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 6,
   },
 }));
+
