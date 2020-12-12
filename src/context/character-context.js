@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useReducer } from 'react';
+import api from '../services/api';
 
 const characterDispatchContext = createContext(null);
 const characterStateContext = createContext(null);
@@ -17,6 +18,10 @@ const useCharacterState = () => {
     throw new Error('it should have a value');
   }
   return context;
+};
+
+const useCharacter = () => {
+  return [useCharacterState(), useCharacterDispatch()];
 };
 
 const initialState = {
@@ -51,3 +56,14 @@ const CharacterProvider = ({ children }) => {
     </characterDispatchContext.Provider>
   );
 };
+
+const getCharacters = async (dispatch) => {
+  console.log('tst');
+  dispatch({ type: 'loading', payload: true });
+  const apiData = await api.get('character/');
+  const characters = apiData.data.results;
+  dispatch({ type: 'get', payload: characters });
+  dispatch({ type: 'loading', payload: false });
+};
+
+export { getCharacters, CharacterProvider, useCharacter };

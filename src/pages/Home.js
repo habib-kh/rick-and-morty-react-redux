@@ -1,17 +1,17 @@
 import React from 'react';
 
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getCharacters } from '../store/actions';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { getCharacters } from '../store/actions';
 import { CharacterList, Layout } from '../components';
+import { useCharacter, getCharacters } from '../context/character-context';
 
 export default function Home({ match }) {
-  const characters = useSelector((state) => state.characters.characters);
-  const loading = useSelector((state) => state.characters.loading);
-  const dispatch = useDispatch();
-
+  const [state, dispatch] = useCharacter();
+  const { characters, loading } = state;
+  console.log(state);
   useEffect(() => {
-    dispatch(getCharacters());
+    getCharacters(dispatch);
   }, []);
 
   return (
