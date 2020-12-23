@@ -13,7 +13,7 @@ export default function CharacterCard({ character }) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root} elevation={2}>
+    <Card className={classes.root} elevation={2} data-testid='character-card'>
       <CardContent className={classes.details}>
         <Typography component='h6' variant='h6'>
           {character.name}

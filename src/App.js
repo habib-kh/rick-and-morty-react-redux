@@ -7,7 +7,7 @@ import { CharacterProvider } from './context/character-context';
 export default function App() {
   return (
     // <Provider store={store}>
-    <CharacterProvider>
+    <Provider store={store}>
       <BrowserRouter>
         <Switch>
           <Route path='/' exact component={Home} />
@@ -15,6 +15,6 @@ export default function App() {
         </Switch>
       </BrowserRouter>
       {/* // </Provider> */}
-    </CharacterProvider>
+    </Provider>
   );
 }

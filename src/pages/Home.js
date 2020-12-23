@@ -1,17 +1,21 @@
 import React from 'react';
 
-import { useEffect } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { getCharacters } from '../store/actions';
+import { useEffect } from '../hooks/useEffect';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCharacters } from '../store/actions';
 import { CharacterList, Layout } from '../components';
-import { useCharacter, getCharacters } from '../context/character-context';
+import store from '../store/store';
+// import { useCharacter, getCharacters } from '../context/character-context';
 
 export default function Home({ match }) {
-  const [state, dispatch] = useCharacter();
-  const { characters, loading } = state;
-  console.log(state);
+  // const [state, dispatch] = useCharacter();
+  // const { characters, loading } = state;
+  // console.log(state);
+  const loading = useSelector((state) => state.characters.loading);
+  const characters = useSelector((state) => state.characters.characters);
+  const dispatch = useDispatch();
   useEffect(() => {
-    getCharacters(dispatch);
+    dispatch(getCharacters());
   }, []);
 
   return (
@@ -20,6 +24,7 @@ export default function Home({ match }) {
       title='The Rick and Morty'
       desc='In this site we show you more information about Rick & Morty'
     >
+      ssssss
       <CharacterList characters={characters} />
     </Layout>
   );
