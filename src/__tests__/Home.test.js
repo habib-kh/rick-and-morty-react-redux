@@ -1,4 +1,5 @@
-import { cleanup, render, screen } from '@testing-library/react';
+import React from 'react';
+import { cleanup, screen } from '@testing-library/react';
 import { Home } from '../pages';
 import api from '../services/api';
 import { renderWithRouter, useWithRedux } from '../utils/test-utils';
@@ -7,6 +8,10 @@ jest.mock('../services/api');
 jest.mock('../hooks/useEffect', () => {
   return { useEffect: require('react').useLayoutEffect };
 });
+// beforeAll(() =>
+//   jest.spyOn(React, 'useEffect').mockImplementation(React.useLayoutEffect),
+// );
+// afterAll(() => React.useEffect.mockRestore());
 afterEach(cleanup);
 describe('Home Page', () => {
   it('should render without problem', async () => {
