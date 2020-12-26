@@ -25,7 +25,12 @@ export default function CharacterCard({ character }) {
         >
           {character.location.name}
         </Typography>
-        <Button size='small' component={Link} to={`/profile/${character.id}`}>
+        <Button
+          data-testid='profile-button'
+          size='small'
+          component={Link}
+          to={`/profile/${character.id}`}
+        >
           Learn More
         </Button>
       </CardContent>

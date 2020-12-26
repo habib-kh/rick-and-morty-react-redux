@@ -58,7 +58,6 @@ const CharacterProvider = ({ children }) => {
 };
 
 const getCharacters = async (dispatch) => {
-  console.log('tst');
   dispatch({ type: 'loading', payload: true });
   const apiData = await api.get('character/');
   const characters = apiData.data.results;

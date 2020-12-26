@@ -41,7 +41,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Layout({ title, desc, children, maxWidth, loading }) {
+export default function Layout({
+  title,
+  desc,
+  children,
+  maxWidth,
+  loading,
+  page,
+}) {
   const classes = useStyles();
 
   return (
@@ -49,7 +56,7 @@ export default function Layout({ title, desc, children, maxWidth, loading }) {
       <CssBaseline />
       <AppBar position='relative'>
         <Toolbar>
-          <Typography variant='h6' color='inherit' noWrap>
+          <Typography data-testid={page} variant='h6' color='inherit' noWrap>
             Rick & Morty
           </Typography>
         </Toolbar>

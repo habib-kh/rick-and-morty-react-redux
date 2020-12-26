@@ -47,6 +47,7 @@ export default function Profile({
 
   return (
     <Layout
+      page='profile-page'
       title={profile?.name}
       desc={profile?.location?.name}
       loading={loading || originLoading || locationLoading || episodesLoading}
