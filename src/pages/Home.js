@@ -24,7 +24,6 @@ export default function Home({ match }) {
       title='The Rick and Morty'
       desc='In this site we show you more information about Rick & Morty'
     >
-      ssssss
       <CharacterList characters={characters} />
     </Layout>
   );
