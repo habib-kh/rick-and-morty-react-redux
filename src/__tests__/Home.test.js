@@ -13,37 +13,39 @@ jest.mock('../hooks/useEffect', () => {
 // );
 // afterAll(() => React.useEffect.mockRestore());
 afterEach(cleanup);
+beforeEach(() => {
+  api.get.mockResolvedValueOnce({
+    data: {
+      results: [
+        {
+          id: 1,
+          name: 'Rick Sanchez',
+          status: 'Alive',
+          species: 'Human',
+          type: '',
+          gender: 'Male',
+          location: {
+            name: 'Earth',
+          },
+        },
+        {
+          id: 2,
+          name: 'Morty Smith',
+          status: 'Alive',
+          species: 'Human',
+          type: '',
+          gender: 'Male',
+          location: {
+            name: 'Earth',
+          },
+        },
+      ],
+    },
+  });
+  renderWithRouter(useWithRedux(<Home />));
+});
 describe('Home Page', () => {
   it('should render without problem', async () => {
-    api.get.mockResolvedValueOnce({
-      data: {
-        results: [
-          {
-            id: 1,
-            name: 'Rick Sanchez',
-            status: 'Alive',
-            species: 'Human',
-            type: '',
-            gender: 'Male',
-            location: {
-              name: 'Earth',
-            },
-          },
-          {
-            id: 2,
-            name: 'Morty Smith',
-            status: 'Alive',
-            species: 'Human',
-            type: '',
-            gender: 'Male',
-            location: {
-              name: 'Earth',
-            },
-          },
-        ],
-      },
-    });
-    renderWithRouter(useWithRedux(<Home />));
     expect(api.get).toBeCalledTimes(1);
     const element = await screen.findByText(/Rick Sanchez/);
     const cards = screen.getAllByTestId('character-card');
