@@ -4,7 +4,6 @@ import { useEffect } from '../hooks/useEffect';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCharacters } from '../store/actions';
 import { CharacterList, Layout } from '../components';
-import store from '../store/store';
 // import { useCharacter, getCharacters } from '../context/character-context';
 
 export default function Home({ match }) {

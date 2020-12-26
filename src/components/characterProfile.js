@@ -54,7 +54,9 @@ export default function CharachterProfile({
             <strong>Episodes:</strong>
             <ol>
               {episodes.map((episode) => (
-                <li key={episode.id}>{episode.name}</li>
+                <li data-testid='episode' key={episode.id}>
+                  {episode.name}
+                </li>
               ))}
             </ol>
           </li>

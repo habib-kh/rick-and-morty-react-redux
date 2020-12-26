@@ -53,6 +53,9 @@ export const setProfile = (profile) => ({
 export const getEpisodes = (episodes) => {
   return async (dispatch) => {
     dispatch(setEpisodeLoading(true));
+    console.log(
+      `episode/${episodes.map((episode) => episode.split('episode/')[1])}`,
+    );
     const apiData = await api.get(
       `episode/${episodes.map((episode) => episode.split('episode/')[1])}`,
     );

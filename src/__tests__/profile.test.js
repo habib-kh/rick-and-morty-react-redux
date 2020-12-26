@@ -3,7 +3,6 @@ import { cleanup, screen } from '@testing-library/react';
 import { Profile } from '../pages';
 import api from '../services/api';
 import { renderWithRouter, useWithRedux } from '../utils/test-utils';
-import actions from '../store/actions';
 
 jest.mock('../services/api');
 jest.mock('../hooks/useEffect', () => {

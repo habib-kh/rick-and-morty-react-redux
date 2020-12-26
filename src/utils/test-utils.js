@@ -35,3 +35,5 @@ export const useWithRedux = (
 ) => {
   return <Provider store={store}>{component}</Provider>;
 };
+
+export const mockAllApis = () => {};
